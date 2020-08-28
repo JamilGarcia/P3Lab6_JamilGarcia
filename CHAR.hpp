@@ -24,15 +24,16 @@ public:
         texto += caracter;
         texto = texto + c.getValue();
 
-        STRING salida = setValue(texto);
-        return salida;
-    }
-
-    STRING setValue(string cade)
-    {
-        cadena = cade;
+        STRING salida = texto;
         return cadena;
     }
+
+/*
+    void setValue(string cade)
+    {
+        cadena = cade.getValue();
+    }
+    */
     void operator!()
     {
         cout << caracter;
