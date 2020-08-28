@@ -11,10 +11,17 @@ public:
         cout << caracter;
     }
     
-};
+     
+    int getValue(){
+        return entero; 
+    }
+    
+    void operator<<(INTEGER ent)
+    {
+        entero = ent.getValue(); 
+    }
 
-istream &operator<<(istream &i, INTEGER &n)
-{
-    i >> n.entero;
-    return i;
-}
+    void operator<<(string ent){
+        entero = ent; 
+    }
+};

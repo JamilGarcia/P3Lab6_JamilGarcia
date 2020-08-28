@@ -5,6 +5,7 @@ class CHAR
 {
     friend class STRING;
     char caracter;
+    STRING cadena; 
 
 public:
     /*
@@ -16,18 +17,39 @@ public:
 
     STRING operator+(CHAR c)
     {
+        caracter = c.getValue();
+        string s;
+        s.push_back(caracter);
         string texto;
         texto += caracter;
-        texto += c;
-        return texto;
+        texto = texto + c.getValue();
+
+        STRING salida = setValue(texto);
+        return salida;
+    }
+
+    STRING setValue(string cade)
+    {
+        cadena = cade;
+        return cadena;
     }
     void operator!()
     {
         cout << caracter;
     }
-    istream operator<<(istream &i, CHAR &n)
+
+    char getValue()
     {
-        i >> n.caracter;
-        return i;
+        return caracter;
+    }
+
+    void operator<<(CHAR charac)
+    {
+        caracter = charac.getValue();
+    }
+
+    void operator<<(char charac)
+    {
+        caracter = charac;
     }
 };
